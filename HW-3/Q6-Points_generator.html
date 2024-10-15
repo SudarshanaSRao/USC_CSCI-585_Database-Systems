@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spirograph Point Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+  <script>
+    var t = 0.00; // Convergence criteria/iterative variable.
+    var n = 12; // Scaling factor of the spirograph.
+    var R = 36.0 / 30000;
+    var r = 9.0 / 30000;
+    var a = 30.0 / 30000;
+
+    var fileContent = "";
+
+    while (t < n * Math.PI){
+      var x = (R + r) * Math.cos((r / R) * t) - a * Math.cos((1 + r / R) * t) - 118.285450;
+      var y = (R + r) * Math.sin((r / R) * t) - a * Math.sin((1 + r / R) * t) + 34.020554;
+
+      var res = x + ',' + y + ',0.\n';
+      fileContent += res;
+      t += 0.01;
+    }
+
+    var fileName = "generated_points.txt";
+    var blob = new Blob([fileContent], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, fileName);
+  </script>
+</body>
+</html>

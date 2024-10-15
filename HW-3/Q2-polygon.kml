@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Style id="z1">
+<IconStyle> <Icon> <href> http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png </href> </Icon> </IconStyle>
+</Style>
+
+<Folder>
+<name>Libraries</name>
+<Placemark> <name>Leavey</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.283541, 34.0223052 </coordinates> </Point> </Placemark>
+<Placemark> <name>Seaver</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.2889568, 34.0194139 </coordinates> </Point> </Placemark>
+<Placemark> <name>JFF Marshall</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.282624, 34.0185543 </coordinates> </Point> </Placemark>
+</Folder>
+
+<Folder>
+<name>Restaurants</name>
+<Placemark> <name>City Tacos</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.284564, 34.0242839 </coordinates> </Point> </Placemark>
+<Placemark> <name>Dulce</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.285261789, 34.0254046 </coordinates> </Point> </Placemark>
+<Placemark> <name>Starbucks</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.2844215, 34.0258054 </coordinates> </Point> </Placemark>
+</Folder>
+
+<Folder>
+<name>Departments</name>
+<Placemark> <name>Cinematic Arts</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.2877299, 34.02422 </coordinates> </Point> </Placemark>
+<Placemark> <name>LettersArtsSci</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.2883449, 34.0215767 </coordinates> </Point> </Placemark>
+<Placemark> <name>Viterbi</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.2888948, 34.020756 </coordinates> </Point> </Placemark>
+</Folder>
+
+<Folder>
+<name>Water fountains</name>
+<Placemark> <name>RTC water</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.2860675, 34.0203238 </coordinates> </Point> </Placemark>
+<Placemark> <name>TommyT water</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.2855334, 34.0203803 </coordinates> </Point> </Placemark>
+<Placemark> <name>BDoheny water</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.2829668, 34.0195498 </coordinates> </Point> </Placemark>
+</Folder>
+
+<Placemark> <name>Apartment</name>
+<styleUrl> #z1 </styleUrl> <Point> <coordinates> -118.2829428, 34.0297682 </coordinates> </Point> </Placemark>
+
+<Placemark> <name> Convex hull </name>
+<Style> <LineStyle> <color>ffff7d53</color> </LineStyle>
+<PolyStyle> <color>80fe4d28</color> </PolyStyle> </Style>
+
+<Polygon> <outerBoundaryIs> <LinearRing> 
+<coordinates> -118.282624,34.0185543
+	      -118.2889568,34.0194139
+              -118.2888948,34.020756
+	      -118.2877299,34.02422
+              -118.2829428,34.0297682
+              -118.282624,34.0185543 </coordinates> </LinearRing> </outerBoundaryIs> </Polygon> </Placemark>		
+
+<Placemark> <name> Nearest-1 </name>
+<Style> <LineStyle> <color> ff0000ff </color> <width> 3 </width> </LineStyle> </Style>
+<LineString> <coordinates> -118.2829428,34.0297682 -118.2844215,34.0258054 </coordinates> </LineString> </Placemark> 
+<Placemark> <name> Nearest-2 </name>
+<Style> <LineStyle> <color> ff0000ff </color> <width> 3 </width> </LineStyle> </Style>
+<LineString> <coordinates> -118.2829428,34.0297682 -118.285261789,34.0254046 </coordinates> </LineString> </Placemark>
+<Placemark> <name> Nearest-3 </name>
+<Style> <LineStyle> <color> ff0000ff </color> <width> 3 </width> </LineStyle> </Style>
+<LineString> <coordinates> -118.2829428,34.0297682 -118.284564,34.0242839 </coordinates> </LineString> </Placemark>
+<Placemark> <name> Nearest-4 </name>
+<Style> <LineStyle> <color> ff0000ff </color> <width> 3 </width> </LineStyle> </Style>
+<LineString> <coordinates> -118.2829428,34.0297682 -118.2877299,34.02422 </coordinates> </LineString> </Placemark>
+
+</Document> </kml>

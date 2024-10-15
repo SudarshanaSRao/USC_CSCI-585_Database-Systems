@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>OL</title>
+<script src="https://openlayers.org/api/OpenLayers.js">
+</script>
+<style>
+
+#map {
+    width:400px;
+    height:400px;
+}
+
+</style>
+</head>
+
+<body>
+<div id="map"> </div>
+
+<script>
+var d = {
+        "k1":[
+                {"a":34.0223052, "b":-118.283541}, 
+                {"a":34.0194139, "b":-118.2889568}, 
+                {"a":34.0185543, "b":-118.282624}, 
+                {"a":34.0242839, "b":-118.284564}, 
+                {"a":34.0254046, "b":-118.285261789}, 
+                {"a":34.0258054, "b":-118.2844215},
+                {"a":34.02422, "b":-118.2877299}, 
+                {"a":34.0215767, "b":-118.2883449}, 
+                {"a":34.020756, "b":-118.2888948}, 
+                {"a":34.0203238, "b":-118.2860675}, 
+                {"a":34.0203803, "b":-118.2855334}, 
+                {"a":34.0195498, "b":-118.2829668}, 
+                {"a":34.0297682, "b":-118.2829428} 
+                ]
+        };
+
+localStorage.setItem("myData",JSON.stringify(d));
+var dataStored = JSON.parse(localStorage.getItem("myData"));
+console.log(dataStored); 
+var a = dataStored.k1; 
+
+function initMap() {
+        map = new OpenLayers.Map('map');
+        basemap = new OpenLayers.Layer.OSM("Simple OSM Map");
+        map.addLayer(basemap);
+        markers = new OpenLayers.Layer.Markers("Markers");
+        map.addLayer(markers);
+}
+
+function addMarker(latitude, longitude) {
+        var lonLat = new OpenLayers.LonLat(longitude, latitude)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject() 
+        );
+        var point = new OpenLayers.Marker(lonLat);
+        markers.addMarker(point);
+        map.setCenter(lonLat,14); 
+        //console.log(latitude + ", " + longitude);
+}
+
+initMap();
+
+for(var indx in a) {
+  console.log(a[indx]['a'],a[indx]['b']); 
+  addMarker(a[indx]['a'],a[indx]['b']);
+}
+
+</script>
+</body>
+</html>

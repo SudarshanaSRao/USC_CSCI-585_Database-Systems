@@ -1,0 +1,38 @@
+-- Database: HW3
+
+-- DROP DATABASE IF EXISTS "HW3";
+
+-- Database: HW3
+
+-- DROP DATABASE IF EXISTS "HW3";
+
+-- Database: HW3
+
+-- DROP DATABASE IF EXISTS "HW3";
+
+CREATE EXTENSION POSTGIS;
+CREATE EXTENSION postgis_topology;
+
+CREATE TABLE coordinates(loc_name varchar, shape geometry);
+INSERT INTO coordinates VALUES
+('Leavey', 'POINT(-118.283541 34.0223052)'),
+('Seaver', 'POINT(-118.2889568 34.0194139)'),
+('JFF Marshall', 'POINT(-118.282624 34.0185543)'),
+('City Tacos', 'POINT(-118.284564 34.0242839)'),
+('Cinematic Arts', 'POINT(-118.2877299 34.02422)'),
+('Viterbi', 'POINT(-118.2888948 34.020756)'),
+('LettersArtsSci', 'POINT(-118.2883449 34.0215767)'),
+('RTC water', 'POINT(-118.2860675 34.0203238)'),
+('TommyT water', 'POINT(-118.2855334 34.0203803)'),
+('BDoheny water', 'POINT(-118.2829668 34.0195498)'),
+('Apartment', 'POINT(-118.2829428 34.0297682)'),
+('Dulce', 'POINT(-118.285261789 34.0254046)'),
+('Starbucks', 'POINT(-118.2844215 34.0258054)');
+
+SELECT ST_AsText(ST_ConvexHull(ST_Collect(shape))) FROM coordinates;
+
+SELECT loc_name, ST_Astext(shape) as Point, ST_Distance(shape, 'POINT(-118.2829428 34.0297682)') * 1000 as Distance
+FROM coordinates
+WHERE loc_name<>'Apartment'
+ORDER BY ST_Distance(shape, 'POINT(-118.2829428 34.0297682)')
+limit 4;
