@@ -11,6 +11,7 @@ Welcome to the collection of my SQL assignments! All the SQL files in this repos
   - Joins and subqueries for data relationships.
   - Data manipulation (INSERT, UPDATE, DELETE).
   - Indexing and optimization techniques.
+  - Window functions and CTEs.
   
 - **Database Design**: Includes various database design assignments where I created and modified tables, defined relationships, and enforced data integrity using constraints.
 
